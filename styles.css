@@ -2,6 +2,7 @@
     --body-bg: #344C64;
     --phone-black: #101010;
     --phone-screen-bg: #D3D3D3;
+    --check-btn-border-color: #A0A0A0;
 }
 
 * {
@@ -26,12 +27,12 @@ body {
     width: 300px;
     text-align: center;
     display: flex;
-    flex-direction: column  ;
+    flex-direction: column;
     align-items: center;
 }
 
 #phone {
-    height: 500px;
+    min-height: 500px;
     width: 90%;
     background-color: var(--phone-black);
     
@@ -83,10 +84,15 @@ button {
 }
 
 #clear-btn {
+    position: relative; 
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background: linear-gradient(to bottom right, #202020, #181818);
+    background: linear-gradient(to bottom right, #333333, #222222);
+}
+
+#clear-btn:active {
+    background: linear-gradient(to bottom right, #222, #333);
 }
 
 #check-btn {
@@ -94,10 +100,17 @@ button {
     height: 36px;
     background: linear-gradient(gray, silver);
     font-weight: bold;
-    border-top: 3px solid #A9A9A9;
-    border-left: 3px solid #A9A9A9;
-    border-right: 3px solid #A0A0A0;
-    border-bottom: 3px solid #909090;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    border-right: 3px solid var(--check-btn-border-color);
+    border-bottom: 3px solid var(--check-btn-border-color);
+}
+
+#check-btn:active {
+    border-top: 3px solid var(--check-btn-border-color);
+    border-left: 3px solid var(--check-btn-border-color);
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
 }
 
 #camera-circle {
