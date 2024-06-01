@@ -11,8 +11,7 @@ const verifyNumber = num => {
     userInput.value = '';
 }
 
-const checkEmpty = (e) => {
-    e.preventDefault();
+const checkEmpty = () => {
     if (!userInput.value) { 
         alert("Please provide a phone number");
     } else {
@@ -20,13 +19,15 @@ const checkEmpty = (e) => {
     }
 }
 
-const clearResults = (e) => {
-    e.preventDefault();
+const clearResults = () => {
     results.innerHTML = '';
 }
 
 const checkKeydown = (e) => {
-    
+    e.preventDefault();
+    if (e.keyCode === 13 && document.activeElement == userInput) {
+        checkEmpty();
+    } 
 } 
 
 document.addEventListener("keydown", checkKeydown);
